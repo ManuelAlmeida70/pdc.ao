@@ -1,18 +1,16 @@
-﻿@model PDC.AO.Aplication.Services.DTOs.EspecialidadeDTO
-@{
-}
-
+﻿@model PDC.AO.Hospital.ViewModels.EspecialidadeViewModel
 @{
     Layout = "_Admin";
     ViewData["Title"] = "Especialidades";
 }
-@{
-    ViewData["Title"] = "Especialidades";
-}
-
 @section Styles {
     <link href="~/css/especialidade.css" rel="stylesheet" />
 }
+
+<!-- Botão para abrir modal -->
+<button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalAdicionar">
+    <i class="bi bi-plus-circle me-2"></i>Adicionar Especialidade
+</button>
 
 <!-- Tabela de Especialidades -->
 <div class="content-wrapper">
@@ -35,285 +33,63 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>#001</td>
-                        <td>Cardiologia</td>
-                        <td>15/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Cardiologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Cardiologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#002</td>
-                        <td>Pediatria</td>
-                        <td>16/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Pediatria')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Pediatria')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#003</td>
-                        <td>Ortopedia</td>
-                        <td>17/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Ortopedia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Ortopedia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#004</td>
-                        <td>Neurologia</td>
-                        <td>18/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Neurologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Neurologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#005</td>
-                        <td>Dermatologia</td>
-                        <td>19/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Dermatologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Dermatologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#006</td>
-                        <td>Oftalmologia</td>
-                        <td>20/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Oftalmologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Oftalmologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#001</td>
-                        <td>Cardiologia</td>
-                        <td>15/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Cardiologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Cardiologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#002</td>
-                        <td>Pediatria</td>
-                        <td>16/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Pediatria')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Pediatria')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#003</td>
-                        <td>Ortopedia</td>
-                        <td>17/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Ortopedia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Ortopedia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#004</td>
-                        <td>Neurologia</td>
-                        <td>18/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Neurologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Neurologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#005</td>
-                        <td>Dermatologia</td>
-                        <td>19/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Dermatologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Dermatologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>#006</td>
-                        <td>Oftalmologia</td>
-                        <td>20/11/2025</td>
-                        <td>
-                            <div class="action-buttons">
-                                <button class="btn-action btn-edit" data-bs-toggle="modal" data-bs-target="#modalEditar" onclick="editarEspecialidade('Oftalmologia')">
-                                    <i class="bi bi-pencil-fill"></i>
-                                </button>
-                                <button class="btn-action btn-delete" data-bs-toggle="modal" data-bs-target="#modalEliminar" onclick="eliminarEspecialidade('Oftalmologia')">
-                                    <i class="bi bi-trash-fill"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-
+                    @if (Model?.Especialidades != null && Model.Especialidades.Any())
+                    {
+                        @foreach (var especialidade in Model.Especialidades)
+                        {
+                            <tr>
+                                <td>#@especialidade.Id.ToString("D3")</td>
+                                <td>@especialidade.Descricao</td>
+                                <td>@DateTime.Now.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    <div class="action-buttons">
+                                        <button class="btn-action btn-edit"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#modalEditar"
+                                                onclick="editarEspecialidade('@especialidade.Descricao')">
+                                            <i class="bi bi-pencil-fill"></i>
+                                        </button>
+                                        <!-- APENAS MUDANÇA: remover aspas do ID -->
+                                        <button class="btn-action btn-delete"
+                                                data-bs-toggle="modal"
+                                                data-bs-target="#modalEliminar"
+                                                onclick="eliminarEspecialidade(@especialidade.Id, '@especialidade.Descricao')">
+                                            <i class="bi bi-trash-fill"></i>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="text-center" style="padding: 3rem;">
+                                <i class="bi bi-inbox" style="font-size: 3rem; color: #ccc;"></i>
+                                <p style="margin-top: 1rem; color: #666;">Nenhuma especialidade cadastrada.</p>
+                            </td>
+                        </tr>
+                    }
                 </tbody>
             </table>
         </div>
     </div>
 </div>
 
-<!-- Modal Adicionar -->
-<div class="modal fade" id="modalAdicionar" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="bi bi-plus-circle me-2"></i>Adicionar Especialidade
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="descricaoAdicionar" class="form-label">Descrição da Especialidade</label>
-                        <input type="text" class="form-control" id="descricaoAdicionar" placeholder="Ex: Cardiologia, Pediatria..." required>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn-success">
-                    <i class="bi bi-check-circle me-2"></i>Salvar
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+<partial name="~/Views/Shared/Modals/_ModalsAdicionarEspecialidade.cshtml" model="Model" />
+<partial name="~/Views/Shared/Modals/_ModalsEditarEspecialidade.cshtml" />
+<partial name="~/Views/Shared/Modals/_ModalsEliminarEspecialidade.cshtml" model="Model" />
+<partial name="~/Views/Shared/Modals/_ModalsError.cshtml" />
+<partial name="~/Views/Shared/Modals/_ModalsSucesso.cshtml" />
 
-<!-- Modal Editar -->
-<div class="modal fade" id="modalEditar" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="bi bi-pencil-square me-2"></i>Editar Especialidade
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="mb-3">
-                        <label for="descricaoEditar" class="form-label">Descrição da Especialidade</label>
-                        <input type="text" class="form-control" id="descricaoEditar" required>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn-success">
-                    <i class="bi bi-check-circle me-2"></i>Atualizar
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
 
-<!-- Modal Eliminar -->
-<div class="modal fade modal-delete" id="modalEliminar" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">
-                    <i class="bi bi-exclamation-triangle me-2"></i>Confirmar Eliminação
-                </h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <div class="delete-warning">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <h5>Tem certeza que deseja eliminar?</h5>
-                    <p>A especialidade <span class="specialty-name" id="especialidadeNome"></span> será removida permanentemente.</p>
-                    <p style="margin-top: 10px; color: #e53935; font-weight: 500;">Esta ação não pode ser desfeita!</p>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn-danger">
-                    <i class="bi bi-trash-fill me-2"></i>Sim, Eliminar
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+
+
+
+
+
 
 @section Scripts {
-    <script>
-        function editarEspecialidade(nome) {
-            document.getElementById('descricaoEditar').value = nome;
-        }
-
-        function eliminarEspecialidade(nome) {
-            document.getElementById('especialidadeNome').textContent = nome;
-        }
-    </script>
+    <script src="~/js/especialidade-modal.js"></script>
 }
+

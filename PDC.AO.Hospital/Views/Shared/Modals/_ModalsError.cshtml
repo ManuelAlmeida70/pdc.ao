@@ -1,0 +1,25 @@
+﻿<!-- Modal Erro -->
+<div class="modal fade" id="modalErro" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title">
+                    <i class="bi bi-x-circle-fill me-2"></i>Erro!
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center py-4">
+                <div class="error-icon mb-3">
+                    <i class="bi bi-x-circle-fill text-danger" style="font-size: 4rem;"></i>
+                </div>
+                <h5 class="mb-3">Ocorreu um erro!</h5>
+                <p class="text-muted">@TempData["Erro"]</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-danger" data-bs-dismiss="modal">
+                    <i class="bi bi-x-lg me-2"></i>Fechar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

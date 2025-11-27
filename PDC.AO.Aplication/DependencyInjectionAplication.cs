@@ -9,8 +9,12 @@ public static class DependencyInjectionAplication
         AddUseCases(services);
     }
 
+    
+
     public static void AddUseCases(IServiceCollection service)
     {
         service.AddScoped<ICadastrarEspecialidadeUseCase, CadastrarEspecialidadeUseCase>();
+        service.AddScoped<IGetAllEspecialidade, GetAllEspecialidade>();
+        service.AddScoped<IEliminarEspecialidade, EliminarEspecialidade>();
     }
 }

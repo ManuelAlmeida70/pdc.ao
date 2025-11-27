@@ -1,0 +1,64 @@
+﻿@model PDC.AO.Hospital.ViewModels.EspecialidadeViewModel
+
+
+
+<!-- Modal Adicionar -->
+<div class="modal fade" id="modalAdicionar" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-plus-circle me-2"></i>Adicionar Especialidade
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="CadastrarEspecialidade" asp-controller="Especialidade" method="post" id="formAdicionar">
+                    <div class="mb-3">
+                        <label asp-for="NovaEspecialidade.Descricao" class="form-label">Descrição da Especialidade</label>
+                        <input asp-for="NovaEspecialidade.Descricao" type="text" class="form-control" placeholder="Ex: Cardiologia, Pediatria..." required>
+                        <span asp-validation-for="NovaEspecialidade.Descricao" class="text-danger"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn btn-success" form="formAdicionar">
+                    <i class="bi bi-check-circle me-2"></i>Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@* <!-- Modal Adicionar -->
+<div class="modal fade" id="modalAdicionar" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="bi bi-plus-circle me-2"></i>Adicionar Especialidade
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form asp-action="CadastrarEspecialidade" asp-controller="Especialidade" id="formAdicionar">
+                    <div class="mb-3">
+                        <label asp-for="Descricao" for="descricaoAdicionar" class="form-label">Descrição da Especialidade</label>
+                        <input asp-for="Descricao" type="text" class="form-control" id="descricaoAdicionar" placeholder="Ex: Cardiologia, Pediatria..." required>
+                        <span asp-validation-for="Descricao" class="text-danger"></span>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="submit" class="btn-success" form="formAdicionar">
+                    <i class="bi bi-check-circle me-2"></i>Salvar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+ *@
